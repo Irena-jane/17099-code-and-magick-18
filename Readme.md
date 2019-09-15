@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Ирина Романова](https://up.htmlacademy.ru/javascript/18/user/17099).
-* Наставник: `Неизвестно`.
+* Наставник: `Алексей Зольников`.
 
 ---
 
