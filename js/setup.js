@@ -17,17 +17,18 @@ var randomSort = function () {
   return Math.random() - 0.5;
 };
 
-var getRandomInt = function (max) {
-  return Math.floor(Math.random() * Math.floor(max));
+var getRandomNum = function (max) {
+  return Math.floor(Math.random() * max);
 };
+
 var createWizard = function () {
   var wizard = {};
-  var _surnames = [firstNames[getRandomInt(firstNames.length)], surnames[getRandomInt(surnames.length)]];
+  var _surnames = [firstNames[getRandomNum(firstNames.length)], surnames[getRandomNum(surnames.length)]];
   _surnames.sort(randomSort);
   wizard.name = _surnames.join(' ');
 
-  wizard.coatColor = coatColors[getRandomInt(coatColors.length)];
-  wizard.eyesColor = eyesColors[getRandomInt(eyesColors.length)];
+  wizard.coatColor = coatColors[getRandomNum(coatColors.length)];
+  wizard.eyesColor = eyesColors[getRandomNum(eyesColors.length)];
 
   return wizard;
 };
