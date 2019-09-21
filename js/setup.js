@@ -36,7 +36,7 @@ var createWizards = function () {
   var wizards = [];
 
   for (var i = 0; i < 4; i++) {
-    var wizard = getWizard();
+    var wizard = createWizard();
     wizards.push(wizard);
   }
 
@@ -64,7 +64,7 @@ var createWizardElem = function (wizard) {
 };
 
 var createWizardElems = function () {
-  var wizards = getWizards();
+  var wizards = createWizards();
   var list = document.querySelector('.setup-similar-list');
   var fragment = document.createDocumentFragment();
 
