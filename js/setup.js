@@ -5,7 +5,7 @@ userDialog.classList.remove('hidden');
 
 var firstNames = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор',
   'Юлия', 'Люпита', 'Вашингтон'];
-var names = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко',
+var surnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко',
   'Топольницкая', 'Нионго', 'Ирвинг'];
 var coatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)',
   'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)',
@@ -22,9 +22,9 @@ var getRandomInt = function (max) {
 };
 var createWizard = function () {
   var wizard = {};
-  var _names = [firstNames[getRandomInt(firstNames.length)], names[getRandomInt(names.length)]];
-  _names.sort(randomSort);
-  wizard.name = _names.join(' ');
+  var _surnames = [firstNames[getRandomInt(firstNames.length)], surnames[getRandomInt(surnames.length)]];
+  _surnames.sort(randomSort);
+  wizard.name = _surnames.join(' ');
 
   wizard.coatColor = coatColors[getRandomInt(coatColors.length)];
   wizard.eyesColor = eyesColors[getRandomInt(eyesColors.length)];
