@@ -11,12 +11,12 @@
   var setupSubmit = userDialog.querySelector('.setup-submit');
   var form = userDialog.querySelector('form');
 
-  var START_DIALOG_TOP = 80;
+  var startDialogTop = window.getComputedStyle(userDialog).top;
 
   var popupOpen = function () {
     userDialog.classList.remove('hidden');
     userDialog.style.left = Math.round(window.innerWidth / 2) + 'px';
-    userDialog.style.top = START_DIALOG_TOP + 'px';
+    userDialog.style.top = startDialogTop;
 
     document.addEventListener('keydown', popupEscHandler);
 
