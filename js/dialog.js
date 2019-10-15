@@ -2,6 +2,9 @@
 
 (function () {
 
+  var save = window.backend['save'];
+  // var onError = window.backend['onError'];
+
   var isEscEvent = window.util['isEscEvent'];
   var isEnterEvent = window.util['isEnterEvent'];
 
@@ -11,12 +14,13 @@
   var setupSubmit = userDialog.querySelector('.setup-submit');
   var form = userDialog.querySelector('form');
 
-  var START_DIALOG_TOP = 80;
+  var startDialogTop = window.getComputedStyle(userDialog).top;
+
 
   var popupOpen = function () {
     userDialog.classList.remove('hidden');
     userDialog.style.left = Math.round(window.innerWidth / 2) + 'px';
-    userDialog.style.top = START_DIALOG_TOP + 'px';
+    userDialog.style.top = startDialogTop;
 
     document.addEventListener('keydown', popupEscHandler);
 
@@ -51,11 +55,24 @@
 
     isEnterEvent(e, popupOpen);
   });
+
+  var onLoad = function () {
+    popupClose();
+  };
+
+
   setupSubmit.addEventListener('keydown', function (e) {
     isEnterEvent(e, function () {
-      form.submit();
+      // form.submit();
+      save(new FormData(form), onLoad);
     });
   });
+
+  form.addEventListener('submit', function (e) {
+    save(new FormData(form), onLoad);
+    e.preventDefault();
+  });
+
 
   var dialogHandle = document.querySelector('.upload');
 
